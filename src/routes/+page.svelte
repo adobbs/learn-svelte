@@ -8,6 +8,11 @@
     let count = 0;
     $: doubled = count * 2;
 
+    $: if (count >= 10) {
+        alert('Count is dangerously high!');
+        count = 0;
+    }
+
     function increment() {
         count += 1;
     }
