@@ -16,7 +16,22 @@
     function increment() {
         count += 1;
     }
+
+    let numbers = [1, 2, 3, 4];
+
+	function addNumber() {
+		// numbers.push(numbers.length + 1);
+        numbers = [...numbers, numbers.length + 1];
+	}
+
+	$: sum = numbers.reduce((t, n) => t + n, 0);
 </script>
+
+<p>{numbers.join(' + ')} = {sum}</p>
+
+<button on:click={addNumber}>
+	Add a number
+</button>
 
 <h1>Hello {name.toUpperCase()}!</h1>
 <div>
@@ -26,6 +41,9 @@
     </button>
 </div>
 <p>{count} doubled is {doubled}</p>
+
+
+
 <p>This is a paragraph.</p>
 <Nested />
 <p>{@html string}</p>
