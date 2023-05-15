@@ -6,6 +6,7 @@
     let string = `this string contains some <strong>HTML!!!</strong>`;
 
     let count = 0;
+    $: doubled = count * 2;
 
     function increment() {
         count += 1;
@@ -19,6 +20,7 @@
         {count === 1 ? 'time' : 'times'}
     </button>
 </div>
+<p>{count} doubled is {doubled}</p>
 <p>This is a paragraph.</p>
 <Nested />
 <p>{@html string}</p>
