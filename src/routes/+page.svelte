@@ -1,5 +1,13 @@
 <script>
     import Nested from "./Nested.svelte";
+    import PackageInfo from './PackageInfo.svelte';
+
+	const pkg = {
+		name: 'svelte',
+		speed: 'blazing',
+		version: 3,
+		website: 'https://svelte.dev'
+	};
 
     let name = 'Svelte';
     let src = './rickroll.gif';
@@ -47,6 +55,7 @@
 <p>This is a paragraph.</p>
 <Nested answer={42} />
 <Nested />
+<PackageInfo {...pkg} />
 <p>{@html string}</p>
 <img src={src} alt="A man dances." />
 
