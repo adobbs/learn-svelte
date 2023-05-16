@@ -45,7 +45,7 @@
 
 
 <p>This is a paragraph.</p>
-<Nested />
+<Nested answer={42} />
 <p>{@html string}</p>
 <img src={src} alt="A man dances." />
 
