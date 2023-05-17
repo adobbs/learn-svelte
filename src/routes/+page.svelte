@@ -49,6 +49,9 @@
     </button>
 </div>
 <p>{count} doubled is {doubled}</p>
+{#if count > 5}
+    <p>{count} is greater than 5</p>
+{/if}
 
 
 
