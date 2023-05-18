@@ -51,6 +51,10 @@
 <p>{count} doubled is {doubled}</p>
 {#if count > 5}
     <p>{count} is greater than 5</p>
+{:else if count < 3}
+    <p>{count} is less than 3</p>
+{:else}
+    <p>{count} is between 3 and 5, inclusive</p>
 {/if}
 
 
