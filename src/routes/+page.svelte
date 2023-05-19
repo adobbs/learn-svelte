@@ -1,6 +1,6 @@
 <script>
-    import Nested from "./Nested.svelte";
-    import PackageInfo from './PackageInfo.svelte';
+    import Nested from "../components/Nested.svelte";
+    import PackageInfo from '../components/PackageInfo.svelte';
 
 	const pkg = {
 		name: 'svelte',
