@@ -1,4 +1,5 @@
 <script>
+    import Each from "../components/Each.svelte";
     import Nested from "../components/Nested.svelte";
     import PackageInfo from '../components/PackageInfo.svelte';
 
@@ -34,6 +35,8 @@
 
 	$: sum = numbers.reduce((t, n) => t + n, 0);
 </script>
+
+<Each />
 
 <p>{numbers.join(' + ')} = {sum}</p>
 
