@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
     import Each from "../components/Each.svelte";
     import Nested from "../components/Nested.svelte";
     import PackageInfo from '../components/PackageInfo.svelte';
