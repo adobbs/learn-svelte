@@ -8,16 +8,21 @@
 </script>
 
 <h1>Events Examples</h1>
-<div 
+<button on:click|once={() => alert('clicked')}>
+	Click me
+</button>
+
+<!-- <div 
     on:pointermove={(e) => {
         m = {x: e.clientX, y: e.clientY};
     }}
+    class="pointer"
 >
 	The pointer is at {m.x} x {m.y}
-</div>
+</div> -->
 
 <style>
-	div {
+	.pointer {
 		position: fixed;
 		left: 0;
 		top: 0;
