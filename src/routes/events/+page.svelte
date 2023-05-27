@@ -1,7 +1,7 @@
 <script>
 	// let m = { x: 0, y: 0 };
 
-    import Inner from "../../components/Inner.svelte";
+    import Outer from "../../components/Outer.svelte";
 
 	// function handleMove(event) {
 	// 	m.x = event.clientX;
@@ -19,7 +19,7 @@
 </button>
 
 <div>
-    <Inner on:message={handleMessage} />
+    <Outer on:message={handleMessage} />
 </div>
 
 <!-- <div 
