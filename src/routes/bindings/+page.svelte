@@ -30,17 +30,22 @@
 			`answered question ${selected.id} (${selected.text}) with "${answer}"`
 		);
 	}
+
+    let scoops = 1;
+	let flavours = [];
+
+	const formatter = new Intl.ListFormat('en', { style: 'long', type: 'conjunction' });
 </script>
 
 <h1>Bindings Examples</h1>
 
-<h2>Example 1</h2>
+<h2>Example 1 - Text Inputs</h2>
 
 <input bind:value={name} />
 
 <h1>Hello {name}!</h1>
 
-<h2>Example 2</h2>
+<h2>Example 2 - Numeric Inputs</h2>
 
 <label>
 	<input type="number" bind:value={a} min="0" max="10" />
@@ -54,7 +59,7 @@
 
 <p>{a} + {b} = {a + b}</p>
 
-<h2>Example 3</h2>
+<h2>Example 3 - Checkbox Inputs</h2>
 
 <label>
 	<input type="checkbox" bind:checked={yes} />
@@ -75,7 +80,7 @@
 
 <button disabled={!yes}>Subscribe</button>
 
-<h2>Example 4</h2>
+<h2>Example 4 - Select controls</h2>
 
 <h3>Insecurity questions</h3>
 
@@ -103,6 +108,49 @@
 		? selected.id
 		: '[waiting...]'}
 </p>
+
+<h2>Example 5 - Group Inputs</h2>
+
+<h3>Size</h3>
+
+{#each [1, 2, 3] as number}
+	<label>
+		<input
+			type="radio"
+			name="scoops"
+			value={number}
+            bind:group={scoops}
+		/>
+
+		{number} {number === 1 ? 'scoop' : 'scoops'}
+	</label>
+{/each}
+
+<h3>Flavours</h3>
+
+{#each ['cookies and cream', 'mint choc chip', 'raspberry ripple'] as flavour}
+	<label>
+		<input
+			type="checkbox"
+			name="flavours"
+			value={flavour}
+            bind:group={flavours}
+		/>
+
+		{flavour}
+	</label>
+{/each}
+
+{#if flavours.length === 0}
+	<p>Please select at least one flavour</p>
+{:else if flavours.length > scoops}
+	<p>Can't order more flavours than scoops!</p>
+{:else}
+	<p>
+		You ordered {scoops} {scoops === 1 ? 'scoop' : 'scoops'}
+		of {formatter.format(flavours)}
+	</p>
+{/if}
 
 <style>
     h2 {
