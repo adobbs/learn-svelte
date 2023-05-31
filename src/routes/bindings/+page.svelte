@@ -35,6 +35,9 @@
 	let flavours = [];
 
 	const formatter = new Intl.ListFormat('en', { style: 'long', type: 'conjunction' });
+
+    import { marked } from 'marked';
+	let value = `Some words are *italic*, some are **bold**\n\n- lists\n- are\n- cool`;
 </script>
 
 <h1>Bindings Examples</h1>
@@ -109,7 +112,7 @@
 		: '[waiting...]'}
 </p>
 
-<h2>Example 5 - Group Inputs</h2>
+<h2>Example 5 & 6 - Group Inputs & Select Multiple</h2>
 
 <h3>Size</h3>
 
@@ -160,8 +163,31 @@
 	</p>
 {/if}
 
+<h2>Example 7 - Textarea Inputs</h2>
+
+<div class="grid">
+	input
+	<textarea bind:value></textarea>
+
+	output
+	<div>{@html marked(value)}</div>
+</div>
+
 <style>
     h2 {
         margin-top: 4rem;
     }
+
+    .grid {
+		display: grid;
+		grid-template-columns: 5em 1fr;
+		grid-template-rows: 1fr 1fr;
+		grid-gap: 1em;
+		height: 100%;
+	}
+
+	textarea {
+		flex: 1;
+		resize: none;
+	}
 </style>
