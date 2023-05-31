@@ -128,6 +128,7 @@
 
 <h3>Flavours</h3>
 
+<!-- Checkboxes -->
 {#each ['cookies and cream', 'mint choc chip', 'raspberry ripple'] as flavour}
 	<label>
 		<input
@@ -140,6 +141,13 @@
 		{flavour}
 	</label>
 {/each}
+
+<!-- Select Multiple -->
+<select multiple bind:value={flavours}>
+    {#each ['cookies and cream', 'mint choc chip', 'raspberry ripple'] as flavour}
+        <option>{flavour}</option>
+    {/each}
+</select>
 
 {#if flavours.length === 0}
 	<p>Please select at least one flavour</p>
