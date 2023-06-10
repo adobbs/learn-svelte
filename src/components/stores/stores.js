@@ -39,3 +39,9 @@ function createCount() {
 }
 
 export const customCount = createCount();
+
+// Store bindings
+
+export const name = writable('world');
+
+export const greeting = derived(name, ($name) => `Hello ${$name}!`);
